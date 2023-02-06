@@ -12,7 +12,7 @@ const { Client, LocalAuth } = WhatsApp;
 const client = new Client({
 	authStrategy: new LocalAuth(),
 	puppeteer: {
-		executablePath: "/usr/bin/chromium-browser",
+		// executablePath: "/usr/bin/chromium-browser",
 		args: ["--no-sandbox", "--disable-setuid-sandbox"],
 		headless: true,
 	},
@@ -38,6 +38,15 @@ client.on("message", async (msg) => {
 	var content = msg.body;
 
 	var timeoutBucket = {};
+
+	function createAkiTimeout() {
+		var m = config.timeout || 3;
+
+		timeoutBucket[msg.from] = setTimeout(() => {
+			destroySession(msg.from);
+			chat.sendMessage(config.text.timeout);
+		}, m * 60000);
+	}
 	// Function to send message on the chat
 	const replyBucket = function (reply) {
 		client.sendMessage(chat.id._serialized, reply);
@@ -89,10 +98,7 @@ client.on("message", async (msg) => {
 				);
 
 				client.sendMessage(chat.id._serialized, question);
-				timeoutBucket[msg.from] = setTimeout(() => {
-					destroySession(msg.from);
-					client.searchMessages(config.text.timeout);
-				}, 180000);
+				createAkiTimeout();
 			});
 		}
 
@@ -100,11 +106,24 @@ client.on("message", async (msg) => {
 		else if (session && AnswerOptions.includes(content)) {
 			try {
 				clearTimeout(timeoutBucket[msg.from]);
-			} catch (error) {}
+			} catch (error) {
+				console.log("Auto-Session Destroy Error :", error);
+			}
 
 			if (msg.from === session.bucketName) {
 				chat.sendStateTyping();
-				await akiNext(session, content, replyBucket, chat, forWho);
+
+				await akiNext(session, content, replyBucket, chat, forWho).catch(
+					(e) => {
+						console.log(e);
+						chat.sendMessage(
+							chat.id._serialized,
+							"Something went wrong! Please start a new game by typing _play_."
+						);
+						destroySession(msg.from);
+					}
+				);
+				createAkiTimeout();
 			} else {
 				client.sendMessage(chat.id._serialized, config.text.not_your);
 			}

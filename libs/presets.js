@@ -7,7 +7,7 @@ function getIntro(list = false) {
 		title: "Start a game",
 		description:
 			"Choose you game thematic before you go! I can guess about any character, animal or object!",
-		subTitle: "AVAILABLE GAME-MODES",
+		subTitle: "AVAILABLE THEMATIC",
 	};
 
 	if (list === true) {

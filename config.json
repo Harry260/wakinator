@@ -1,6 +1,6 @@
 {
 	"commands": {
-		"start": ["hey", "hi", "hello", "howdy"],
+		"start": ["hey", "hi", "hello", "howdy", "help"],
 		"trigger": ["play", "start", "aki"],
 		"group_trigger": ["aki play", "aki start", "aki"],
 		"end": ["end", "stop"],
@@ -17,5 +17,6 @@
 		"character": "🧔 Character",
 		"animal": "🐒 Animal",
 		"object": "🔭 Object"
-	}
+	},
+	"timeout": 3
 }

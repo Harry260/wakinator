@@ -1,23 +1,21 @@
-2023/02/06-08:56:25.644 1134 Reusing MANIFEST G:\Wakinator\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2023/02/06-08:56:25.644 1134 Recovering log #329
-2023/02/06-08:56:25.838 1134 Reusing old log G:\Wakinator\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000329.log 
-2023/02/06-08:56:37.391 1134 Level-0 table #339: started
-2023/02/06-08:56:37.418 1134 Level-0 table #339: 1314066 bytes OK
-2023/02/06-08:56:37.420 1134 Delete type=0 #329
-2023/02/06-08:56:37.425 1134 Compacting 1@1 + 6@2 files
-2023/02/06-08:56:37.503 1134 Generated table #340@1: 29782 keys, 2251324 bytes
-2023/02/06-08:56:37.554 1134 Generated table #341@1: 23633 keys, 2279791 bytes
-2023/02/06-08:56:37.621 1134 Generated table #342@1: 23727 keys, 2272681 bytes
-2023/02/06-08:56:37.688 1134 Generated table #343@1: 24433 keys, 2272851 bytes
-2023/02/06-08:56:37.775 1134 Generated table #344@1: 91406 keys, 2283677 bytes
-2023/02/06-08:56:37.865 1134 Generated table #345@1: 51823 keys, 2210586 bytes
-2023/02/06-08:56:37.870 1134 Generated table #346@1: 4333 keys, 89693 bytes
-2023/02/06-08:56:37.870 1134 Compacted 1@1 + 6@2 files => 13660603 bytes
-2023/02/06-08:56:37.871 1134 compacted to: files[ 0 0 7 0 0 0 0 ]
-2023/02/06-08:56:37.871 1134 Delete type=2 #331
-2023/02/06-08:56:37.871 1134 Delete type=2 #332
-2023/02/06-08:56:37.871 1134 Delete type=2 #333
-2023/02/06-08:56:37.871 1134 Delete type=2 #334
-2023/02/06-08:56:37.871 1134 Delete type=2 #335
-2023/02/06-08:56:37.871 1134 Delete type=2 #336
-2023/02/06-08:56:37.871 1134 Delete type=2 #339
+2023/02/06-12:16:03.882 3840 Reusing MANIFEST G:\Wakinator\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/02/06-12:16:03.882 3840 Recovering log #388
+2023/02/06-12:16:03.883 3840 Reusing old log G:\Wakinator\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000388.log 
+2023/02/06-12:16:04.979 1220 Compacting 1@1 + 7@2 files
+2023/02/06-12:16:05.041 1220 Generated table #391@1: 29094 keys, 2253890 bytes
+2023/02/06-12:16:05.088 1220 Generated table #392@1: 23607 keys, 2276435 bytes
+2023/02/06-12:16:05.134 1220 Generated table #393@1: 23691 keys, 2273321 bytes
+2023/02/06-12:16:05.186 1220 Generated table #394@1: 23550 keys, 2270473 bytes
+2023/02/06-12:16:05.260 1220 Generated table #395@1: 82751 keys, 2265948 bytes
+2023/02/06-12:16:05.304 1220 Generated table #396@1: 35047 keys, 2250985 bytes
+2023/02/06-12:16:05.351 1220 Generated table #397@1: 54737 keys, 1310301 bytes
+2023/02/06-12:16:05.351 1220 Compacted 1@1 + 7@2 files => 14901353 bytes
+2023/02/06-12:16:05.352 1220 compacted to: files[ 0 0 7 0 0 0 0 ]
+2023/02/06-12:16:05.352 1220 Delete type=2 #380
+2023/02/06-12:16:05.352 1220 Delete type=2 #381
+2023/02/06-12:16:05.352 1220 Delete type=2 #382
+2023/02/06-12:16:05.352 1220 Delete type=2 #383
+2023/02/06-12:16:05.352 1220 Delete type=2 #384
+2023/02/06-12:16:05.352 1220 Delete type=2 #385
+2023/02/06-12:16:05.352 1220 Delete type=2 #386
+2023/02/06-12:16:05.352 1220 Delete type=2 #389
