@@ -55,14 +55,19 @@ client.on("message", async (msg) => {
 	// If A command to play is triggered
 	// If Group and Group Command || If Not Group and DM command
 	if (
-		(chat.isGroup &&
-			config.commands.group_trigger.includes(content.toLocaleLowerCase())) ||
-		(!chat.isGroup &&
-			config.commands.trigger.includes(content.toLocaleLowerCase()))
+		!chat.isGroup &&
+		config.commands.trigger.includes(content.toLocaleLowerCase())
 	) {
 		// Get and Send intro message
 		var btn = getIntro();
 		client.sendMessage(chat.id._serialized, btn);
+	} else if (
+		chat.isGroup &&
+		config.commands.group_trigger.includes(content.toLocaleLowerCase())
+	) {
+		msg.reply(
+			"*𝕾𝖔𝖗𝖗𝖞!* 🧞\nAkinator is not working right now in groups (it wil start working from 21 March)"
+		);
 	} else if (["buttons_response", "list_response"].includes(msg.type)) {
 		// Get game Session if exists
 		var session = await getSession(author);
@@ -89,7 +94,8 @@ client.on("message", async (msg) => {
 				var question = questionBuilder(
 					akiSession.question,
 					akiSession.currentStep + 1,
-					forWho
+					forWho,
+					session
 				);
 
 				client.sendMessage(chat.id._serialized, question);

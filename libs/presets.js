@@ -62,6 +62,7 @@ function getIntro(list = false) {
 }
 
 function questionBuilder(q_text, q_no, for_who = false) {
+	session;
 	if (for_who) {
 		q_no = q_no + " for " + for_who;
 	}
@@ -103,7 +104,7 @@ function questionBuilder(q_text, q_no, for_who = false) {
 async function sendGameEndMessage(name, image, description, replyBucket) {
 	replyBucket.sendMessage("*🧞 𝕷𝖊𝖙 𝖒𝖊 𝖙𝖍𝖎𝖓𝖐*");
 
-	var dcx = `I guess it is *${name}*, ${description}! Am i correct? \n`;
+	var dcx = `I guess it is *${name}* (${description})! Am i correct? \n`;
 
 	const media = await MessageMedia.fromUrl(image);
 	replyBucket.sendMessage(media, { caption: dcx });
