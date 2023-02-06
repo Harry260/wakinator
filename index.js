@@ -37,6 +37,7 @@ client.on("message", async (msg) => {
 	const chat = await msg.getChat();
 	var content = msg.body;
 
+	var timeoutBucket = {};
 	// Function to send message on the chat
 	const replyBucket = function (reply) {
 		client.sendMessage(chat.id._serialized, reply);
@@ -88,13 +89,25 @@ client.on("message", async (msg) => {
 				);
 
 				client.sendMessage(chat.id._serialized, question);
+				timeoutBucket[msg.from] = setTimeout(() => {
+					destroySession(msg.from);
+					client.searchMessages(config.text.timeout);
+				}, 180000);
 			});
 		}
 
 		// If session already exists and reply response for a question is triggered
 		else if (session && AnswerOptions.includes(content)) {
-			chat.sendStateTyping();
-			await akiNext(session, content, replyBucket, chat, forWho);
+			try {
+				clearTimeout(timeoutBucket[msg.from]);
+			} catch (error) {}
+
+			if (msg.from === session.bucketName) {
+				chat.sendStateTyping();
+				await akiNext(session, content, replyBucket, chat, forWho);
+			} else {
+				client.sendMessage(chat.id._serialized, config.text.not_your);
+			}
 		}
 	}
 

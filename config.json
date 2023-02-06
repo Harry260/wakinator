@@ -9,7 +9,9 @@
 	"text": {
 		"intro": "*Hey, I'm Akinator*! 🧞\nJust think of any character, object or animal, and i will try to guess it! To start playing, type _'start'_. You can also play with me in groups by typing _'aki start'_ \n\nMade by *Harry!*",
 		"end": "Woo! You Ended you game!You can start a  new game by typing _'play'_ / _'start'_ ",
-		"exist": "You already have a game going on! type _'stop'_ to end the existing game. Then you can start a new one!. "
+		"exist": "You already have a game going on! type _'stop'_ to end the existing game. Then you can start a new one!. ",
+		"not_your": "This question is not for you! Type ```aki start``` to start new game for you!",
+		"timeout": "Your game was deleted due to inactivity. Type ```'start'``` to play again!"
 	},
 	"buttons": {
 		"character": "🧔 Character",
