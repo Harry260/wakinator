@@ -2,6 +2,8 @@ import { Aki } from "aki-api";
 import { storeSession, destroySession } from "./sessions.js";
 import { questionBuilder, sendGameEndMessage } from "./presets.js";
 
+import config from "./config.js";
+
 async function createAkiSession(number, gm, callback) {
 	const region = getRegion(gm);
 	const aki = new Aki({ region });
