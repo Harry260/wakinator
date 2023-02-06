@@ -107,9 +107,7 @@ client.on("message", async (msg) => {
 			try {
 				clearTimeout(timeoutBucket[msg.from]);
 				createAkiTimeout(msg.from);
-			} catch (error) {
-				console.log("Auto-Session Destroy Error :", error);
-			}
+			} catch {}
 
 			if (msg.from === session.bucketName) {
 				chat.sendStateTyping();
@@ -136,6 +134,10 @@ client.on("message", async (msg) => {
 			config.commands.group_end.includes(content.toLocaleLowerCase())) ||
 		(!chat.isGroup && config.commands.end.includes(content.toLocaleLowerCase()))
 	) {
+		try {
+			clearTimeout(timeoutBucket[msg.from]);
+		} catch {}
+
 		destroySession(msg.from);
 		msg.reply(config.text.end);
 	}
