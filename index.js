@@ -75,10 +75,16 @@ client.on("message", async (msg) => {
 		else if (!session && StartingOptions.includes(content)) {
 			chat.sendStateTyping();
 
+			var forWho = false;
+			if (chat.isGroup) {
+				const contact = await msg.getContact();
+				forWho = contact.pushname;
+			}
 			await createAkiSession(msg.from, msg.body, (akiSession) => {
 				var question = questionBuilder(
 					akiSession.question,
-					akiSession.currentStep + 1
+					akiSession.currentStep + 1,
+					forWho
 				);
 
 				client.sendMessage(chat.id._serialized, question);
@@ -87,7 +93,8 @@ client.on("message", async (msg) => {
 
 		// If session already exists and reply response for a question is triggered
 		else if (session && AnswerOptions.includes(content)) {
-			await akiNext(session, content, replyBucket, chat);
+			chat.sendStateTyping();
+			await akiNext(session, content, replyBucket, chat, forWho);
 		}
 	}
 

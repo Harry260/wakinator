@@ -4,7 +4,7 @@ import { questionBuilder, sendGameEndMessage } from "./presets.js";
 
 import config from "./config.js";
 
-async function createAkiSession(number, gm, callback) {
+async function createAkiSession(number, gm, callback, forWho) {
 	const region = getRegion(gm);
 	const aki = new Aki({ region });
 	await aki.start();
@@ -14,7 +14,7 @@ async function createAkiSession(number, gm, callback) {
 	callback(aki);
 }
 
-async function akiNext(session, answer, replyBucket, chat) {
+async function akiNext(session, answer, replyBucket, chat, forWho) {
 	var answerId = getAnswer(answer);
 	await session.step(answerId);
 
@@ -32,7 +32,11 @@ async function akiNext(session, answer, replyBucket, chat) {
 		);
 		destroySession(session.bucketName);
 	} else {
-		const question = questionBuilder(session.question, session.currentStep + 1);
+		const question = questionBuilder(
+			session.question,
+			session.currentStep + 1,
+			forWho
+		);
 		replyBucket(question);
 	}
 }
