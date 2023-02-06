@@ -62,7 +62,6 @@ function getIntro(list = false) {
 }
 
 function questionBuilder(q_text, q_no, for_who = false) {
-	session;
 	if (for_who) {
 		q_no = q_no + " for " + for_who;
 	}
