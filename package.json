@@ -1,0 +1,31 @@
+{
+  "name": "wakinator",
+  "version": "1.0.0",
+  "description": "An akinator bot for Whatsapp",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harry260/wakinator.git"
+  },
+  "keywords": [
+    "akinator",
+    "classifcation",
+    "whatsapp",
+    "bot"
+  ],
+  "author": "Harry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harry260/wakinator/issues"
+  },
+  "homepage": "https://github.com/harry260/wakinator#readme",
+  "dependencies": {
+    "aki-api": "^6.0.8",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#fix-buttons-list"
+  }
+}

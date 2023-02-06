@@ -1,0 +1,23 @@
+2023/02/06-08:56:25.644 1134 Reusing MANIFEST G:\Wakinator\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/02/06-08:56:25.644 1134 Recovering log #329
+2023/02/06-08:56:25.838 1134 Reusing old log G:\Wakinator\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000329.log 
+2023/02/06-08:56:37.391 1134 Level-0 table #339: started
+2023/02/06-08:56:37.418 1134 Level-0 table #339: 1314066 bytes OK
+2023/02/06-08:56:37.420 1134 Delete type=0 #329
+2023/02/06-08:56:37.425 1134 Compacting 1@1 + 6@2 files
+2023/02/06-08:56:37.503 1134 Generated table #340@1: 29782 keys, 2251324 bytes
+2023/02/06-08:56:37.554 1134 Generated table #341@1: 23633 keys, 2279791 bytes
+2023/02/06-08:56:37.621 1134 Generated table #342@1: 23727 keys, 2272681 bytes
+2023/02/06-08:56:37.688 1134 Generated table #343@1: 24433 keys, 2272851 bytes
+2023/02/06-08:56:37.775 1134 Generated table #344@1: 91406 keys, 2283677 bytes
+2023/02/06-08:56:37.865 1134 Generated table #345@1: 51823 keys, 2210586 bytes
+2023/02/06-08:56:37.870 1134 Generated table #346@1: 4333 keys, 89693 bytes
+2023/02/06-08:56:37.870 1134 Compacted 1@1 + 6@2 files => 13660603 bytes
+2023/02/06-08:56:37.871 1134 compacted to: files[ 0 0 7 0 0 0 0 ]
+2023/02/06-08:56:37.871 1134 Delete type=2 #331
+2023/02/06-08:56:37.871 1134 Delete type=2 #332
+2023/02/06-08:56:37.871 1134 Delete type=2 #333
+2023/02/06-08:56:37.871 1134 Delete type=2 #334
+2023/02/06-08:56:37.871 1134 Delete type=2 #335
+2023/02/06-08:56:37.871 1134 Delete type=2 #336
+2023/02/06-08:56:37.871 1134 Delete type=2 #339

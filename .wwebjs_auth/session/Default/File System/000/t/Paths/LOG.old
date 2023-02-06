@@ -1,0 +1,4 @@
+2023/02/05-20:54:53.749 4f0c Creating DB G:\Wakinator\.wwebjs_auth\session\Default\File System\000\t\Paths since it was missing.
+2023/02/05-20:54:53.751 4f0c Reusing MANIFEST G:\Wakinator\.wwebjs_auth\session\Default\File System\000\t\Paths/MANIFEST-000001
+2023/02/05-20:54:53.751 4f0c Recovering log #3
+2023/02/05-20:54:53.751 4f0c Reusing old log G:\Wakinator\.wwebjs_auth\session\Default\File System\000\t\Paths/000003.log 
