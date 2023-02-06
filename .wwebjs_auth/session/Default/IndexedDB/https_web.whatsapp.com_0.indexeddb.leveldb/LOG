@@ -1,24 +1,26 @@
-2023/02/06-12:17:03.955 1bb8 Reusing MANIFEST G:\Wakinator\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2023/02/06-12:17:03.955 1bb8 Recovering log #388
-2023/02/06-12:17:04.013 1bb8 Reusing old log G:\Wakinator\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000388.log 
-2023/02/06-12:17:43.774 1bb8 Level-0 table #400: started
-2023/02/06-12:17:43.791 1bb8 Level-0 table #400: 1225240 bytes OK
-2023/02/06-12:17:43.792 1bb8 Delete type=0 #388
-2023/02/06-12:17:44.383 1fc4 Compacting 1@1 + 7@2 files
-2023/02/06-12:17:44.445 1fc4 Generated table #401@1: 29139 keys, 2254966 bytes
-2023/02/06-12:17:44.491 1fc4 Generated table #402@1: 23593 keys, 2276212 bytes
-2023/02/06-12:17:44.539 1fc4 Generated table #403@1: 23673 keys, 2272086 bytes
-2023/02/06-12:17:44.586 1fc4 Generated table #404@1: 23597 keys, 2272631 bytes
-2023/02/06-12:17:44.654 1fc4 Generated table #405@1: 76216 keys, 2266435 bytes
-2023/02/06-12:17:44.702 1fc4 Generated table #406@1: 43226 keys, 2260004 bytes
-2023/02/06-12:17:44.753 1fc4 Generated table #407@1: 57309 keys, 1545727 bytes
-2023/02/06-12:17:44.753 1fc4 Compacted 1@1 + 7@2 files => 15148061 bytes
-2023/02/06-12:17:44.753 1fc4 compacted to: files[ 0 0 7 0 0 0 0 ]
-2023/02/06-12:17:44.753 1fc4 Delete type=2 #391
-2023/02/06-12:17:44.753 1fc4 Delete type=2 #392
-2023/02/06-12:17:44.753 1fc4 Delete type=2 #393
-2023/02/06-12:17:44.753 1fc4 Delete type=2 #394
-2023/02/06-12:17:44.753 1fc4 Delete type=2 #395
-2023/02/06-12:17:44.754 1fc4 Delete type=2 #396
-2023/02/06-12:17:44.754 1fc4 Delete type=2 #397
-2023/02/06-12:17:44.754 1fc4 Delete type=2 #400
+2023/02/06-13:00:30.152 1db0 Reusing MANIFEST G:\Wakinator\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/02/06-13:00:30.152 1db0 Recovering log #441
+2023/02/06-13:00:30.267 1db0 Reusing old log G:\Wakinator\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000441.log 
+2023/02/06-13:00:41.479 24d4 Level-0 table #453: started
+2023/02/06-13:00:41.502 24d4 Level-0 table #453: 1330239 bytes OK
+2023/02/06-13:00:41.503 24d4 Delete type=0 #441
+2023/02/06-13:00:41.509 24d4 Compacting 1@1 + 8@2 files
+2023/02/06-13:00:41.579 24d4 Generated table #454@1: 29340 keys, 2255557 bytes
+2023/02/06-13:00:41.626 24d4 Generated table #455@1: 23446 keys, 2274134 bytes
+2023/02/06-13:00:41.677 24d4 Generated table #456@1: 23737 keys, 2276815 bytes
+2023/02/06-13:00:41.727 24d4 Generated table #457@1: 23626 keys, 2270823 bytes
+2023/02/06-13:00:41.789 24d4 Generated table #458@1: 48601 keys, 2268734 bytes
+2023/02/06-13:00:41.858 24d4 Generated table #459@1: 78748 keys, 2301061 bytes
+2023/02/06-13:00:41.907 24d4 Generated table #460@1: 42581 keys, 2199628 bytes
+2023/02/06-13:00:41.938 24d4 Generated table #461@1: 32896 keys, 679053 bytes
+2023/02/06-13:00:41.938 24d4 Compacted 1@1 + 8@2 files => 16525805 bytes
+2023/02/06-13:00:41.938 24d4 compacted to: files[ 0 0 8 0 0 0 0 ]
+2023/02/06-13:00:41.939 24d4 Delete type=2 #443
+2023/02/06-13:00:41.939 24d4 Delete type=2 #444
+2023/02/06-13:00:41.939 24d4 Delete type=2 #445
+2023/02/06-13:00:41.939 24d4 Delete type=2 #446
+2023/02/06-13:00:41.939 24d4 Delete type=2 #447
+2023/02/06-13:00:41.939 24d4 Delete type=2 #448
+2023/02/06-13:00:41.939 24d4 Delete type=2 #449
+2023/02/06-13:00:41.939 24d4 Delete type=2 #450
+2023/02/06-13:00:41.939 24d4 Delete type=2 #453

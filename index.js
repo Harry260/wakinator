@@ -6,7 +6,7 @@ import { getIntro, questionBuilder } from "./libs/presets.js";
 import { getSession, destroySession } from "./libs/sessions.js";
 import { akiNext, createAkiSession } from "./libs/akinator.js";
 import config from "./libs/config.js";
-
+var timeoutBucket = {};
 // WhatsApp Auth
 const { Client, LocalAuth } = WhatsApp;
 const client = new Client({
@@ -37,12 +37,12 @@ client.on("message", async (msg) => {
 	const chat = await msg.getChat();
 	var content = msg.body;
 
-	var timeoutBucket = {};
-
-	function createAkiTimeout() {
+	// Function to create timeout, if user is not responding.
+	function createAkiTimeout(bucket) {
 		var m = config.timeout || 3;
 
-		timeoutBucket[msg.from] = setTimeout(() => {
+		timeoutBucket[bucket] = setTimeout(() => {
+			clearTimeout(timeoutBucket[msg.from]);
 			destroySession(msg.from);
 			chat.sendMessage(config.text.timeout);
 		}, m * 60000);
@@ -84,7 +84,7 @@ client.on("message", async (msg) => {
 		// Sends Typing state and creates akiSession
 		else if (!session && StartingOptions.includes(content)) {
 			chat.sendStateTyping();
-
+			chat.sendMessage("🧞 𝕮𝖗𝖊𝖆𝖙𝖎𝖓𝖌 𝖞𝖔𝖚𝖗 𝖌𝖆𝖒𝖊");
 			var forWho = false;
 			if (chat.isGroup) {
 				const contact = await msg.getContact();
@@ -98,7 +98,7 @@ client.on("message", async (msg) => {
 				);
 
 				client.sendMessage(chat.id._serialized, question);
-				createAkiTimeout();
+				createAkiTimeout(msg.from);
 			});
 		}
 
@@ -106,6 +106,7 @@ client.on("message", async (msg) => {
 		else if (session && AnswerOptions.includes(content)) {
 			try {
 				clearTimeout(timeoutBucket[msg.from]);
+				createAkiTimeout(msg.from);
 			} catch (error) {
 				console.log("Auto-Session Destroy Error :", error);
 			}
@@ -123,7 +124,6 @@ client.on("message", async (msg) => {
 						destroySession(msg.from);
 					}
 				);
-				createAkiTimeout();
 			} else {
 				client.sendMessage(chat.id._serialized, config.text.not_your);
 			}
