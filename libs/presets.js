@@ -63,7 +63,7 @@ function getIntro(list = false) {
 
 function questionBuilder(q_text, q_no, for_who = false) {
 	if (for_who) {
-		q_text = q_text + " for " + for_who;
+		q_no = q_no + " for " + for_who;
 	}
 	const list = new List(
 		q_text,
