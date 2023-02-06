@@ -67,10 +67,10 @@ function questionBuilder(q_text, q_no, for_who = false) {
 	}
 	const list = new List(
 		q_text,
-		"Choose",
+		"Pick",
 		[
 			{
-				title: "YOUR ANSWER",
+				title: q_text,
 				rows: [
 					{
 						title: "Yes",

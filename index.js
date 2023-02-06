@@ -5,8 +5,11 @@ import WhatsApp from "whatsapp-web.js";
 import { getIntro, questionBuilder } from "./libs/presets.js";
 import { getSession, destroySession } from "./libs/sessions.js";
 import { akiNext, createAkiSession } from "./libs/akinator.js";
+import { createAkiTimeout, destroyAkiTimeout } from "./libs/timeout.js";
+
+// Configs from config.js
 import config from "./libs/config.js";
-var timeoutBucket = {};
+
 // WhatsApp Auth
 const { Client, LocalAuth } = WhatsApp;
 const client = new Client({
@@ -35,18 +38,10 @@ client.on("ready", () => {
 // Handle Message
 client.on("message", async (msg) => {
 	const chat = await msg.getChat();
-	var content = msg.body;
 
-	// Function to create timeout, if user is not responding.
-	function createAkiTimeout(bucket) {
-		var m = config.timeout || 3;
+	var content = msg.body,
+		author = msg.from;
 
-		timeoutBucket[bucket] = setTimeout(() => {
-			clearTimeout(timeoutBucket[msg.from]);
-			destroySession(msg.from);
-			chat.sendMessage(config.text.timeout);
-		}, m * 60000);
-	}
 	// Function to send message on the chat
 	const replyBucket = function (reply) {
 		client.sendMessage(chat.id._serialized, reply);
@@ -70,7 +65,7 @@ client.on("message", async (msg) => {
 		client.sendMessage(chat.id._serialized, btn);
 	} else if (["buttons_response", "list_response"].includes(msg.type)) {
 		// Get game Session if exists
-		var session = await getSession(msg.from);
+		var session = await getSession(author);
 
 		var StartingOptions = Object.values(config.buttons),
 			AnswerOptions = ["Yes", "No", "Don't know", "Probably", "Probably not"];
@@ -90,7 +85,7 @@ client.on("message", async (msg) => {
 				const contact = await msg.getContact();
 				forWho = contact.pushname;
 			}
-			await createAkiSession(msg.from, msg.body, (akiSession) => {
+			await createAkiSession(author, content, (akiSession) => {
 				var question = questionBuilder(
 					akiSession.question,
 					akiSession.currentStep + 1,
@@ -98,18 +93,17 @@ client.on("message", async (msg) => {
 				);
 
 				client.sendMessage(chat.id._serialized, question);
-				createAkiTimeout(msg.from);
+				createAkiTimeout(author, chat);
 			});
 		}
 
 		// If session already exists and reply response for a question is triggered
 		else if (session && AnswerOptions.includes(content)) {
-			try {
-				clearTimeout(timeoutBucket[msg.from]);
-				createAkiTimeout(msg.from);
-			} catch {}
+			destroyAkiTimeout(author, () => {
+				createAkiTimeout(author, chat);
+			});
 
-			if (msg.from === session.bucketName) {
+			if (author === session.bucketName) {
 				chat.sendStateTyping();
 
 				await akiNext(session, content, replyBucket, chat, forWho).catch(
@@ -119,7 +113,7 @@ client.on("message", async (msg) => {
 							chat.id._serialized,
 							"Something went wrong! Please start a new game by typing _play_."
 						);
-						destroySession(msg.from);
+						destroySession(author);
 					}
 				);
 			} else {
@@ -135,10 +129,10 @@ client.on("message", async (msg) => {
 		(!chat.isGroup && config.commands.end.includes(content.toLocaleLowerCase()))
 	) {
 		try {
-			clearTimeout(timeoutBucket[msg.from]);
+			destroyAkiTimeout(author);
 		} catch {}
 
-		destroySession(msg.from);
+		destroySession(author);
 		msg.reply(config.text.end);
 	}
 });

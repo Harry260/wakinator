@@ -1,0 +1,18 @@
+*Hey, I'm Akinator!* 🧞
+Just think of any character, object or animal, and i will try to guess it! Type _'play'_ to start you game on the go!
+
+*How to Play?* 🎯
+
+1️⃣ Think of any Animal/Character/Object
+2️⃣ Type ```play```. if you are playing in a group, type ```aki play```
+3️⃣ You will get three options [Animal/Character/Object], choose accordingly
+4️⃣ You will get a series of questions, You can answer by choosing from the given options: Yes, No, Don't Know, Probably, Probably not
+5️⃣ After 10-20 questions, I will guess the thing you are guessing
+6️⃣ Mostly I get it correct, but not sure tho!
+
+*Extra Stuff* 📦
+
+1️⃣ If you want to stop the game, type ```stop``` or ```end```
+
+_This bot made by 𝖍𝖆𝖗𝖗𝖞!_
+

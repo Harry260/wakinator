@@ -7,7 +7,7 @@
 		"group_end": ["aki end", "aki stop"]
 	},
 	"text": {
-		"intro": "*Hey, I'm Akinator*! 🧞\nJust think of any character, object or animal, and i will try to guess it! To start playing, type _'start'_. You can also play with me in groups by typing _'aki start'_ \n\nMade by *Harry!*",
+		"intro": "*Hey, I'm Akinator!* 🧞\n\nJust think of any character, object or animal, and i will try to guess it! Type _'play'_ to start you game on the go!\n\n*How to Play?* 🎯\n\n1️⃣ Think of any Animal/Character/Object\n2️⃣ Type ```play```. if you are playing in a group, type ```aki play``` \n3️⃣ You will get three options [Animal/Character/Object], choose accordingly\n4️⃣ You will get a series of questions, You can answer by choosing from the given options: Yes, No, Don't Know, Probably, Probably not\n5️⃣ After 10-20 questions, I will guess the thing you are guessing\n6️⃣ Mostly I get it correct, but not sure tho!\n\n*Extra Stuff* 📦\n\n1️⃣ If you want to stop the game, type ```stop``` or ```end```. Then guess how you would stop me in groups!\n\n_This bot made by 𝖍𝖆𝖗𝖗𝖞!_",
 		"end": "Woo! You ended your game! You can start a  new game by typing _'play'_ / _'start'_ ",
 		"exist": "You already have a game going on! type _'stop'_ to end the existing game. Then you can start a new one!. ",
 		"not_your": "This question is not for you! Type ```aki start``` to start new game for you!",

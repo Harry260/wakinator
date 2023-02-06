@@ -1,2 +1,1 @@
-out(bucket) {
-		var m = config.timeout || 3;
+createAkiTime

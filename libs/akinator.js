@@ -1,6 +1,7 @@
 import { Aki } from "aki-api";
 import { storeSession, destroySession } from "./sessions.js";
 import { questionBuilder, sendGameEndMessage } from "./presets.js";
+import { destroyAkiTimeout } from "./timeout.js";
 
 import config from "./config.js";
 
@@ -23,14 +24,9 @@ async function akiNext(session, answer, replyBucket, chat, forWho) {
 
 		console.log(session.answers[1]);
 		var { name, description, absolute_picture_path } = session.answers[0];
-		sendGameEndMessage(
-			name,
-			absolute_picture_path,
-			description,
-
-			chat
-		);
+		sendGameEndMessage(name, absolute_picture_path, description, chat);
 		destroySession(session.bucketName);
+		destroyAkiTimeout(session.bucketName);
 	} else {
 		const question = questionBuilder(
 			session.question,
