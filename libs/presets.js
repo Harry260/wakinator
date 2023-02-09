@@ -105,8 +105,12 @@ async function sendGameEndMessage(name, image, description, replyBucket) {
 
 	var dcx = `I guess it is *${name}* (${description})! Am i correct? \n`;
 
-	const media = await MessageMedia.fromUrl(image);
-	replyBucket.sendMessage(media, { caption: dcx });
+	try {
+		const media = await MessageMedia.fromUrl(image);
+		replyBucket.sendMessage(media, { caption: dcx });
+	} catch (error) {
+		replyBucket.sendMessage(caption);
+	}
 }
 
 export { getIntro, questionBuilder, sendGameEndMessage };

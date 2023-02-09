@@ -14,5 +14,5 @@ Just think of any character, object or animal, and i will try to guess it! Type 
 
 1️⃣ If you want to stop the game, type ```stop``` or ```end```
 
-_This bot made by 𝖍𝖆𝖗𝖗𝖞!_
+_Made by 𝖍𝖆𝖗𝖗𝖞!_
 
