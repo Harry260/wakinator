@@ -109,7 +109,7 @@ async function sendGameEndMessage(name, image, description, replyBucket) {
 		const media = await MessageMedia.fromUrl(image);
 		replyBucket.sendMessage(media, { caption: dcx });
 	} catch (error) {
-		replyBucket.sendMessage(caption);
+		replyBucket.sendMessage(dcx);
 	}
 }
 
